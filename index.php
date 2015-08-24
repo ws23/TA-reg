@@ -18,8 +18,13 @@
 <div class="container body">
 <?php	if(isset($_SESSION['stuID'])) {	
 			$result = $DBmain->query("SELECT * FROM `apply` WHERE `stuID` = '{$_SESSION['stuID']}'");
-			if($result)
-				locate($URLPv . "print.php"); 
+			if($result){
+				$row = $result->fetch_array(MYSQLI_BOTH); 
+				if($row['page']==99)
+					locate($URLPv . "print.php"); 
+				else
+					locate($URLPv . "apply.php"); 
+			}
 			else
 				locate($URLPv . "apply.php"); 
 	}

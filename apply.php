@@ -20,6 +20,10 @@ else{
 <body>
 <?php require_once(dirname(__FILE__) . "/lib/header.php"); ?>
 <div class="container body">
+<?php
+	$result = $DBmain->query("SELECT * FROM `apply` WHERE ")
+
+
 
 
 
