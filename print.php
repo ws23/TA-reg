@@ -21,8 +21,22 @@ else{
 <?php require_once(dirname(__FILE__) . "/lib/header.php"); ?>
 <div class="container body">
 <?php
+	if(isset($_SESSION['admin'])){
+		require_once(dirname(__FILE__) . "/admin.php"); 
+		if(isset($_GET['stu'])){
+			$result = $DBmain->query("SELECT * FROM `apply` WHERE `stuID` = '{$_GET['stu']}'; "); 
+			if($result->num_rows>0)
+				$_SESSION['stuID'] = $_GET['stu']; 
+			else
+				$_SESSION['stuID'] = '0'; 
+		}
+		else
+			$_SESSION['stuID'] = '0'; 
+	}
 	$result = $DBmain->query("SELECT * FROM `apply` WHERE `stuID` = '{$_SESSION['stuID']}'; ");
 	$row = $result->fetch_array(MYSQLI_BOTH); 
+	if($row['page'] != 99 && !isset($_SESSION['admin']))
+		locate($URLPv . "apply.php"); 
 ?>
 	<div class="apply">
 		<div class="reg-title">

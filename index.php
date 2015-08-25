@@ -16,7 +16,10 @@
 <body>
 <?php require_once(dirname(__FILE__) . "/lib/header.php"); ?>
 <div class="container body">
-<?php	if(isset($_SESSION['stuID'])) {	
+<?php	
+		if(isset($_SESSION['admin']))
+			locate($URLPv . "print.php"); 
+		else if(isset($_SESSION['stuID'])) {	
 			$result = $DBmain->query("SELECT * FROM `apply` WHERE `stuID` = '{$_SESSION['stuID']}'");
 			if($result){
 				$row = $result->fetch_array(MYSQLI_BOTH); 
@@ -27,7 +30,7 @@
 			}
 			else
 				locate($URLPv . "apply.php"); 
-	}
+		}
 		else if(isset($_POST['stuID']) && isset($_POST['stuPW'])) {
 			if(CheckPOP3("ems.ndhu.edu.tw", $_POST['stuID'], $_POST['stuPW'])){
 				$_SESSION['stuID'] = $_POST['stuID'];
