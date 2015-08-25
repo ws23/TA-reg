@@ -40,6 +40,19 @@ function setLog($DBlink, $type="info", $content, $user=""){
 	$DBlink->query("INSERT INTO `log`(`type`, `msg`, `user`, `site`, `IP`) VALUES ('{$type}', '{$content}', '{$user}', '{$url}', '{$ip}'); ");
 }
 
+/* set Login */
+function setLogin($DBlink, $user){
+	$ip = getIP(); 
+	$result = $DBlink->query("SELECT * FROM `login` WHERE `user` = '{$user}'; "); 
+	if($result->num_rows>0){
+		$DBlink->query("UPDATE `login` SET `IP`= '{$ip}', `time` = CURRENT_TIMESTAMP WHERE `user` = '{$user}'; "); 
+	}
+	else{
+		$DBlink->query("INSERT INTO `login`(`user`, `IP`) VALUES('{$user}', '{$ip}'); "); 
+	
+	}
+}
+
 /* POP3 Auth */
 function CheckPOP3($server, $user, $pwd, $port = 110){
     //若任一欄位為空白則無效

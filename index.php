@@ -32,6 +32,7 @@
 			if(CheckPOP3("ems.ndhu.edu.tw", $_POST['stuID'], $_POST['stuPW'])){
 				$_SESSION['stuID'] = $_POST['stuID']; 
 				setLog($DBmain, "info", "Login Success", $_SESSION['stuID']); 
+				setLogin($DBmain, $_SESSION['stuID']); 
 				locate($URLPv . "index.php"); 
 			}
 			else{ 
