@@ -16,8 +16,14 @@ else{
 	<link rel="stylesheet" href="<?php echo $URLPv; ?>index.css">
 	<script src="<?php echo $URLPv; ?>lib/jquery/jquery-1.11.2.js"></script>
 	<script src="<?php echo $URLPv; ?>lib/bootstrap/js/bootstrap.js"></script>
+	<script>
+		print(); 
+		function wait(){
+			setTimeout('window.location.href = "<?php echo $URLPv; ?>index.php"', 10); 
+		}
+	</script>
 </head>
-<body>
+<body onload="wait(); ">
 <div class="container body print-p2">
 <?php
 	$result = $DBmain->query("SELECT * FROM `apply` WHERE `stuID` = '{$_SESSION['stuID']}'; ");

@@ -14,8 +14,14 @@ else{
 	<title>通識教育中心擔任教學助理（TA）申請</title>
 	<link rel="stylesheet" href="<?php echo $URLPv; ?>lib/bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" href="<?php echo $URLPv; ?>index.css">
+	<script>
+	print(); 
+	function wait(){
+		setTimeout('window.location.href = "<?php echo $URLPv ?>index.php"', 10); 
+	}	
+	</script>
 </head>
-<body>
+<body onload="wait(); ">
 <div class="container body print-p1">
 <?php
 	$result = $DBmain->query("SELECT * FROM `apply` WHERE `stuID` = '{$_SESSION['stuID']}'; ");
