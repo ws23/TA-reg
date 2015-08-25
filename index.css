@@ -64,6 +64,18 @@ body {
 	width: 262px; 
 }
 
+.print-p1 {
+	margin-top: -100px; 
+}
+
+.print-p2 {
+	margin-top: -90px; 
+}
+
+.print-footer {
+	text-align: right; 
+	font-size: 10pt; 
+}
 
 .footer {
 	text-align: center;
