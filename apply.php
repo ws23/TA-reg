@@ -13,9 +13,9 @@ else{
 	<meta charset="utf8">
 	<title>通識教育中心擔任教學助理（TA）申請</title>
 	<link rel="stylesheet" href="<?php echo $URLPv; ?>lib/bootstrap/css/bootstrap.css">
-	<link rel="stylesheet" href="<?php echo $URLPv; ?>inex.css">
+	<link rel="stylesheet" href="<?php echo $URLPv; ?>index.css">
 	<script src="<?php echo $URLPv; ?>lib/jquery/jquery-1.11.2.js"></script>
-	<script src="<?php echo $URLPv; ?>lib/bootstrap/js/bootstrap.js"</script>
+	<script src="<?php echo $URLPv; ?>lib/bootstrap/js/bootstrap.js"></script>
 </head>
 <body>
 <?php require_once(dirname(__FILE__) . "/lib/header.php"); ?>
