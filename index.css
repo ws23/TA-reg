@@ -59,13 +59,11 @@ body {
 	text-align: right; 
 }
 
-.reg-attach tr {
-	height: 36pt; 
+.reg-attach tr td img{
+	height: 180px; 
+	width: 262px; 
 }
 
-.reg-attacg td {
-	width: 236pt; 
-}
 
 .footer {
 	text-align: center;
