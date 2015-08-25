@@ -117,7 +117,7 @@ else{
 		<div class="reg-attach">
 			<?php if($row['cardIDFront']!=null){ ?>
 			<h5>身份證影本</h5>
-			<table>
+			<table class="table table-bordered text-center">
 				<tr>
 					<td><img src="<?php echo $URLPv . $row['cardIDFront']; ?>"></td>
 					<td><img src="<?php echo $URLPv . $row['cardIDBack']; ?>"></td>
@@ -125,14 +125,14 @@ else{
 			</table>
 			<?php } if($row['AICFront']!=null){ ?>
 			<h5>居留證影本</h5>
-			<table>
+			<table class="table table-bordered text-center">
 				<tr>
 					<td><img src="<?php echo $URLPv . $row['AICFront']; ?>"></td>
 					<td><img src="<?php echo $URLPv . $row['AICBack']; ?>"></td>
 				</tr>
 			</table>
 			<?php } if($row['workPermissionFront']!=null){ ?>
-			<table>
+			<table class="table table-bodered text-center">
 				<tr>
 					<td><img src="<?php echo $URLPv . $row['workPermissionFront']; ?>"></td>
 					<td><img src="<?php echo $URLPv . $row['workPermissionBack']; ?>"></td>
