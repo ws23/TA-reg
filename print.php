@@ -133,6 +133,7 @@ else{
 			</table>
 			<?php } if($row['workPermissionFront']!=null){ ?>
 			<table class="table table-bodered text-center">
+				<h5>工作許可證影本</h5>
 				<tr>
 					<td><img src="<?php echo $URLPv . $row['workPermissionFront']; ?>"></td>
 					<td><img src="<?php echo $URLPv . $row['workPermissionBack']; ?>"></td>
