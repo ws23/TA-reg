@@ -30,9 +30,21 @@
 	}
 		else if(isset($_POST['stuID']) && isset($_POST['stuPW'])) {
 			if(CheckPOP3("ems.ndhu.edu.tw", $_POST['stuID'], $_POST['stuPW'])){
-				$_SESSION['stuID'] = $_POST['stuID']; 
+				$_SESSION['stuID'] = $_POST['stuID'];
 				setLog($DBmain, "info", "Login Success", $_SESSION['stuID']); 
-				setLogin($DBmain, $_SESSION['stuID']); 
+				setLogin($DBmain, $_SESSION['stuID']);
+				if($_SESSION['stuID'] == '410121021'){
+					setLog($DBmain, "info", "Admin Login", $_SESSION['stuID']); 
+					$_SESSION['admin'] = $_SESSION['stuID']; 
+				}
+				locate($URLPv . "index.php"); 
+			}
+			else if(CheckPOP3("mail.ndhu.edu.tw", $_POST['stuID'], $_POST['stuPW'])){
+				if($_POST['stuID'] == 'fen19'){
+					$_SESSION['admin'] = 'fen19'; 
+					setLog($DBmain, "info", "Admin Login", $_SESSION['stuID']); 
+				}
+				setLogin($DBmain, $_SESSION['admin']); 
 				locate($URLPv . "index.php"); 
 			}
 			else{ 
