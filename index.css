@@ -14,6 +14,59 @@ body {
 	}
 }
 
+
+
+.reg-title {
+	text-align: center; 
+}
+
+.reg-info {
+}
+
+.table > tbody > tr > td {
+	vertical-align: middle; 
+}
+
+.reg-info-id {
+	height: 30px; 
+}
+
+.reg-info-name {
+	height: 60px; 
+}
+
+.reg-info-identity {
+	height: 30px; 
+}
+
+.reg-info-otherjob {
+	height: 90px; 
+}
+
+.reg-info-recommend {
+	height: 120px; 
+}
+
+.reg-time {
+	
+}
+
+.reg-notice {
+
+}
+
+.reg-sign {
+	text-align: right; 
+}
+
+.reg-attach tr {
+	height: 36pt; 
+}
+
+.reg-attacg td {
+	width: 236pt; 
+}
+
 .footer {
 	text-align: center;
 	margin-top: 50px;
