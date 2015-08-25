@@ -15,7 +15,7 @@
                         <ul class="nav navbar-nav navbar-right">
 							<?php if(isset($_SESSION['stuID'])){ 
 								$result = $DBmain->query("SELECT * FROM `apply` WHERE `page` = 99 AND `stuID` = '{$_SESSION['stuID']}'; "); 
-								if($result->num_rows>0) {
+								if($result->num_rows>0 && !isset['admin']) {
 							?>
 							<li><a target="_balnk" href="<?php echo $URLPv; ?>page1.php">列印第一頁</a></li>
 							<li><a target="_blank" href="<?php echo $URLPv; ?>page2.php">列印第二頁</a></li>
